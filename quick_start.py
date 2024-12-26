@@ -15,6 +15,14 @@ from hydra import compose, initialize
 
 import time
 import collections
+
+
+os.environ['http_proxy'] = 'http://127.0.0.1:7890'
+os.environ['https_proxy'] = 'http://127.0.0.1:7890'
+
+os.environ['HTTP_PROXY'] = 'http://127.0.0.1:7890'
+os.environ['HTTPS_PROXY'] = 'http://127.0.0.1:7890'
+
 class FPS:
     def __init__(self, avarageof=50):
         self.frametimestamps = collections.deque(maxlen=avarageof)
